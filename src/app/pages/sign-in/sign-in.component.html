@@ -1,0 +1,20 @@
+<section class="sign-in">
+ <form class="sign-in__content" [formGroup]="form">
+   <h1 class="sign-in__title">Login</h1>
+   <div class="sign-in__form">
+     <div class="sign-in__field">
+       <label class="sign-in__description">E-mail</label>
+       <input class="sign-in__value" formControlName="email" />
+     </div>
+
+     <div class="sign-in__field">
+       <label class="sign-in__description">Sua senha</label>
+       <input class="sign-in__value" type="password" formControlName="password" />
+     </div>
+   </div>
+   <footer class="sign-in__actions">
+     <button class="sign-in__btn sign-in__btn--sign-in" [disabled]="!isValid" (click)="handleSignIn()">Entrar</button>
+     <button class="sign-in__btn sign-in__btn--register" routerLink="/pages/sign-up">Cadastrar</button>
+   </footer>
+ </form>
+</section>

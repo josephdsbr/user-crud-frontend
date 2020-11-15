@@ -1,0 +1,66 @@
+<section class="sign-up">
+  <form class="sign-up__content" [formGroup]="form">
+    <h1 class="sign-up__title">Cadastro</h1>
+    <div class="sign-up__form">
+      <div class="sign-up__field sign-up__field--name">
+        <label class="sign-up__description">Seu nome</label>
+        <input class="sign-up__value" formControlName="name" />
+      </div>
+
+      <div class="sign-up__field sign-up__field--email">
+        <label class="sign-up__description">E-mail</label>
+        <input class="sign-up__value" type="email" formControlName="email" />
+      </div>
+
+      <div class="sign-up__field sign-up__field--password">
+        <label class="sign-up__description">Sua senha</label>
+        <input class="sign-up__value" type="password" formControlName="password" />
+      </div>
+
+      <div class="sign-up__field sign-up__field--phone">
+        <label class="sign-up__description">Celular</label>
+        <input mask="(00) 0 0000-0000" class="sign-up__value" type="tel" formControlName="phone" />
+      </div>
+
+      <div formGroupName="address" class="sign-up__field sign-up__field--zipCode">
+        <label class="sign-up__description">CEP</label>
+        <input mask="00.000-000" class="sign-up__value" formControlName="zipCode" />
+      </div>
+
+      <div formGroupName="address" class="sign-up__field sign-up__field--street">
+        <label class="sign-up__description">Logradouro</label>
+        <input class="sign-up__value" type="text" formControlName="street" />
+      </div>
+
+      <div formGroupName="address" class="sign-up__field sign-up__field--number">
+        <label class="sign-up__description">Número</label>
+        <input class="sign-up__value" formControlName="number" />
+      </div>
+
+      <div formGroupName="address" class="sign-up__field sign-up__field--complement">
+        <label class="sign-up__description">Complemento</label>
+        <input class="sign-up__value" formControlName="complement" />
+      </div>
+
+      <div formGroupName="address" class="sign-up__field sign-up__field--district">
+        <label class="sign-up__description">Bairro</label>
+        <input class="sign-up__value" formControlName="district" />
+      </div>
+
+      <div formGroupName="address" class="sign-up__field sign-up__field--city">
+        <label class="sign-up__description">Cidade</label>
+        <input class="sign-up__value" formControlName="city" />
+      </div>
+
+      <div formGroupName="address" class="sign-up__field sign-up__field--state">
+        <label class="sign-up__description">Estado</label>
+        <input class="sign-up__value" formControlName="state" />
+      </div>
+
+    </div>
+    <footer class="sign-up__actions">
+      <button class="sign-up__btn sign-up__btn--sign-up" (click)="onSubmitHandle()">Cadastrar</button>
+      <button class="sign-up__btn sign-up__btn--register" routerLink="../">Voltar</button>
+    </footer>
+  </form>
+</section>

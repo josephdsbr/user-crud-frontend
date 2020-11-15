@@ -1,0 +1,179 @@
+.sign-up {
+  height: 100%;
+  width: 100%;
+  display: grid;
+
+  &__content {
+    width: 60%;
+    min-width: 19rem;
+    height: 85%;
+    -webkit-box-shadow: 0 0 4px 1px #8257e6;
+    -moz-box-shadow: 0 0 4px 1px #8257e6;
+    box-shadow: 0 0 4px 1px #8257e6;
+    align-self: center;
+    border-radius: 0.5rem;
+    justify-self: center;
+    display: grid;
+    padding: 1% 5%;
+    grid-template-rows: min-content 62% 20%;
+    grid-row-gap: 1.5%;
+    grid-template-areas:
+      "title"
+      "form"
+      "actions";
+  }
+
+  &__title {
+    grid-area: title;
+    text-align: center;
+    padding: 1rem 0;
+    grid-area: title;
+    font-size: 1.9rem;
+    color: #8257e6;
+  }
+
+  &__form {
+    max-height: 90%;
+    width: 100%;
+    overflow-y: scroll;
+    grid-area: form;
+    display: grid;
+    grid-auto-rows: minmax(4.2rem, 5.5rem);
+    grid-column-gap: 3%;
+    padding: 0 1rem;
+    grid-template-areas:
+      "name email password"
+      "phone phone zipCode"
+      "street street street"
+      "number complement complement"
+      "district city state";
+    grid-row-gap: 10%;
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #8257e6;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #4caf50;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  &__actions {
+    grid-area: actions;
+    display: grid;
+    grid-template-rows: 45% 45%;
+    grid-auto-rows: 2.5rem;
+    grid-auto-columns: 80%;
+    grid-row-gap: 10%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__btn {
+    align-self: center;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
+    color: #e1e1e6;
+    border-radius: 0.35rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    transition: 0.25s;
+    cursor: pointer;
+
+    &:not(&:disabled) + &:hover {
+      filter: brightness(80%);
+    }
+
+    &--sign-up {
+      background: #4caf50;
+    }
+
+    &:disabled {
+      filter: brightness(40%);
+    }
+
+    &--register {
+      background: #8257e6;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: min-content auto;
+    grid-row-gap: 10%;
+    align-self: center;
+    justify-self: center;
+
+    &--name {grid-area: name}
+
+    &--email {grid-area: email}
+
+    &--password {grid-area: password}
+
+    &--phone {grid-area: phone}
+
+    &--street {grid-area: street}
+
+    &--number {grid-area: number}
+
+    &--complement {grid-area: complement}
+
+    &--district {grid-area: district}
+
+    &--zipCode {grid-area: zipCode}
+
+    &--city {grid-area: city}
+
+    &--state{grid-area: state}
+  }
+
+  &__description {
+
+  }
+
+  &__value {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.35rem;
+    border: none;
+    padding: 0 0.7rem;
+    box-shadow: 0px 0px 3px 1px #8257e6;
+    transition: 0.25s ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 0px 3px 1px #e1e1e6;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 3px 1px #4caf50;
+    }
+  }
+
+  @supports not (display: grid) {
+    display: flex;
+
+    &__content {
+      margin: auto !important;
+    }
+  }
+
+  @supports (not (display: grid)) and (not (display: flex)) {
+    margin: auto !important;
+  }
+}
