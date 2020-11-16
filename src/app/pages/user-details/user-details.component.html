@@ -25,14 +25,14 @@
         <input class="user-details__value" mask="(00) 0 0000-0000" formControlName="phone" />
       </div>
 
-      <div formGroupName="address" class="user-details__field user-details__field--zipCode">
-        <label class="user-details__description">CEP</label>
-        <input class="user-details__value" mask="00.000-000" formControlName="zipCode" />
-      </div>
-
       <div formGroupName="address" class="user-details__field user-details__field--street">
         <label class="user-details__description">Logradouro</label>
         <input class="user-details__value" formControlName="street" />
+      </div>
+
+      <div formGroupName="address" class="user-details__field user-details__field--zipCode">
+        <label class="user-details__description">CEP</label>
+        <input class="user-details__value" mask="00.000-000" formControlName="zipCode" />
       </div>
 
       <div formGroupName="address" class="user-details__field user-details__field--number">

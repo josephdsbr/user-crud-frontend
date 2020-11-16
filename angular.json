@@ -171,6 +171,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "user-crud-frontend-final"
+    }
+  },
+  "defaultProject": "user-crud-frontend-final",
+  "cli": {
+    "analytics": "41604db5-7ea9-4578-927f-1007ebee2a2d"
+  }
 }

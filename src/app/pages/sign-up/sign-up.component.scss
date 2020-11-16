@@ -6,6 +6,7 @@
   &__content {
     width: 80%;
     max-width: 35rem;
+    max-height: 45rem;
     background: #202024;
     height: 85%;
     max-height: 100%;
@@ -43,7 +44,8 @@
     grid-column-gap: 3%;
     padding: 0 1rem;
     grid-template-areas:
-      "name email password"
+      "name name name"
+      "email email password"
       "phone phone zipCode"
       "street street street"
       "number complement complement"
