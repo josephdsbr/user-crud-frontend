@@ -1,4 +1,4 @@
-import {UserState} from '../../../models/UserModel';
+import {UserState} from '../../../models/user.model';
 import {UserActions, UserActionsType} from './user.actions';
 import produce from 'immer';
 

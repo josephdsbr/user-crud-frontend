@@ -59,7 +59,7 @@
 
     </div>
     <footer class="sign-up__actions">
-      <button class="sign-up__btn sign-up__btn--sign-up" (click)="onSubmitHandle()">Cadastrar</button>
+      <button class="sign-up__btn sign-up__btn--sign-up" [disabled]="!isValid" (click)="onSubmitHandle()">Cadastrar</button>
       <button class="sign-up__btn sign-up__btn--register" routerLink="../">Voltar</button>
     </footer>
   </form>

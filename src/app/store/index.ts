@@ -1,5 +1,5 @@
-import {AuthState} from '../models/AuthModel';
-import {UserState} from '../models/UserModel';
+import {AuthState} from '../models/auth.model';
+import {UserState} from '../models/user.model';
 
 export interface AppState {
   auth: AuthState;

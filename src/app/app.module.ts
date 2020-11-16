@@ -10,32 +10,34 @@ import {PagesModule} from './pages/pages.module';
 import {LayoutsModule} from './@layouts/layouts.module';
 import {EffectsModule} from '@ngrx/effects';
 import {AuthEffects} from './store/modules/auth/auth.effects';
-import {HttpClientModule} from "@angular/common/http";
-import {ToastrModule} from "ngx-toastr";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {UserReducer} from "./store/modules/user/user.reducer";
-import {UserEffects} from "./store/modules/user/user.effects";
-import {InterceptorsModule} from "./interceptors/interceptors.module";
+import {HttpClientModule} from '@angular/common/http';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {UserReducer} from './store/modules/user/user.reducer';
+import {UserEffects} from './store/modules/user/user.effects';
+import {InterceptorsModule} from './interceptors/interceptors.module';
+import {NgxSpinnerModule} from "ngx-spinner";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     BrowserAnimationsModule,
     StoreModule.forRoot({
       auth: AuthReducer,
       user: UserReducer
     }),
-    StoreDevtoolsModule.instrument({ maxAge: 50 }),
+    StoreDevtoolsModule.instrument({maxAge: 50}),
     EffectsModule.forRoot([AuthEffects, UserEffects]),
     AppRoutingModule,
     PagesModule,
     InterceptorsModule,
     LayoutsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,15 +4,19 @@ import {Store} from "@ngrx/store";
 import {AppState} from "../store";
 import {Observable} from "rxjs";
 import {selectToken} from "../store/modules/auth/auth.selectors";
+import {NgxSpinnerService} from "ngx-spinner";
+import {finalize} from "rxjs/operators";
+import {SpinnerService} from "../services/spinner.service";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   token: string;
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<AppState>, private spinner: SpinnerService) {
     this.store.select(selectToken).subscribe(token => this.token = token);
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    this.spinner.showSpinner();
     if (this.token) {
       req = req.clone({
         setHeaders: {
@@ -20,6 +24,8 @@ export class AuthInterceptor implements HttpInterceptor {
         }
       });
     }
-    return next.handle(req);
+    return next.handle(req).pipe(
+      finalize(() => this.spinner.hideSpinner())
+    );
   }
 }

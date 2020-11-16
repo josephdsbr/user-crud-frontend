@@ -7,7 +7,7 @@ export interface UserState {
 }
 
 export interface AddressModel {
-  id: number;
+  id?: number;
   street: string;
   number: string;
   complement?: string;
@@ -15,4 +15,12 @@ export interface AddressModel {
   zipCode: string;
   city: string;
   state: string;
+}
+
+export interface UserRegisterRequestModel {
+  name: string;
+  email: string;
+  password: string;
+  phone: string;
+  address: AddressModel;
 }

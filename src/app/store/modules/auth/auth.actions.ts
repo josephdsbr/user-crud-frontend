@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {AuthSignInRequestModel, AuthSignInResponseModel} from '../../../models/AuthModel';
+import {AuthSignInRequestModel, AuthSignInResponseModel} from '../../../models/auth.model';
 import {HttpErrorResponse, HttpResponseBase} from "@angular/common/http";
 
 export enum AuthActionsType {

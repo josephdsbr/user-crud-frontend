@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {AuthActionsType, AuthSignInFailure, AuthSignInRequest, AuthSignInSuccess} from './auth.actions';
 import {catchError, map, mergeMap, tap} from 'rxjs/operators';
-import {AuthService} from '../../../services/auth-service/auth-service';
+import {AuthService} from '../../../services/auth-service/auth.service';
 import {of} from 'rxjs';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';

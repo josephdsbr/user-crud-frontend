@@ -1,4 +1,4 @@
-import {AuthState} from '../../../models/AuthModel';
+import {AuthState} from '../../../models/auth.model';
 import {AuthActions, AuthActionsType} from './auth.actions';
 import produce from 'immer';
 

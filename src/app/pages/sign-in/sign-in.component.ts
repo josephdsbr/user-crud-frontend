@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../services/auth-service/auth-service';
+import {AuthService} from '../../services/auth-service/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthSignInRequestModel} from "../../models/AuthModel";
+import {AuthSignInRequestModel} from "../../models/auth.model";
 import {AppState} from "../../store";
 import {Store} from "@ngrx/store";
 import {AuthSignInRequest} from "../../store/modules/auth/auth.actions";

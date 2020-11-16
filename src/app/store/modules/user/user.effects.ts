@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
-import {UserState} from '../../../models/UserModel';
+import {UserState} from '../../../models/user.model';
 import {
   UserActionsType,
   UserFetchDataByIdFailure,
@@ -8,7 +8,7 @@ import {
   UserFetchDataByIdSuccess
 } from './user.actions';
 import {catchError, map, mergeMap, tap} from 'rxjs/operators';
-import {UserService} from '../../../services/user-service/user-service';
+import {UserService} from '../../../services/user-service/user.service';
 import {of} from 'rxjs';
 import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';

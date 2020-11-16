@@ -6,6 +6,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {NgxMaskModule, IConfig} from 'ngx-mask';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -14,9 +15,10 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
   imports: [
     RouterModule.forChild(pageRoutes),
     CommonModule,
+    NgxSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxMaskModule.forRoot(options)
+    NgxMaskModule.forRoot(options),
   ]
 })
 export class PagesModule { }

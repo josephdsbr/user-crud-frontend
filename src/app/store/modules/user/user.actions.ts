@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {UserState} from '../../../models/UserModel';
+import {UserState} from '../../../models/user.model';
 import {HttpErrorResponse} from '@angular/common/http';
 
 export enum UserActionsType {
