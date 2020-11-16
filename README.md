@@ -15,7 +15,7 @@ Tabela de Conteúdos
     <a href="#autor">Autor</a>
 </p>
 
-### [Informações](#informacoes)
+### Informações
 
 Você pode visualizar esta aplicação através deste [link](https://obscure-hamlet-90064.herokuapp.com/).
 
@@ -33,7 +33,7 @@ Você pode visualizar esta aplicação através deste [link](https://obscure-ham
 - [ ] Implementação de Testes Unitários para os Reducers e Effects.
 
 
-### [Métricas](#metricas)
+### Métricas
 
 As métricas abaixo foram feitas utilizando a ferramenta [LightHouse da Google](https://developers.google.com/web/tools/lighthouse?hl=pt_br).
 
