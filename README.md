@@ -6,7 +6,7 @@ Tabela de Conteúdos
 <p align="center">
     <a href="#informacoes">Informações</a>
     <a href="#features">Features</a>
-    <a href="#metricas">Métricas</a>
+    <a href="#metricas-e-dados">Métricas e Dados</a>
     <a href="#telas">Telas</a>
     <a href="#pre-requisito">Pré-requisito</a>
     <a href="#instalacao">Instalação</a>
@@ -35,7 +35,7 @@ Você pode visualizar esta aplicação através deste [link](https://obscure-ham
 - [ ] Implementação de Testes Unitários para os Reducers e Effects.
 
 
-### Métricas
+### [Métricas e Dados](#metricas-e-dados)
 
 As métricas abaixo foram feitas utilizando a ferramenta [LightHouse da Google](https://developers.google.com/web/tools/lighthouse?hl=pt_br).
 
