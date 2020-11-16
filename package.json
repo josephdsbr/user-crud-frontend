@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "postinstall": "npm run build:ssr",
+    "start": "npm run serve:ssr",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
