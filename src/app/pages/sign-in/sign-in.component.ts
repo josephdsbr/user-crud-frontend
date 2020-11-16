@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../services/auth-service/auth.service';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthSignInRequestModel} from "../../models/auth.model";
-import {AppState} from "../../store";
-import {Store} from "@ngrx/store";
-import {AuthSignInRequest} from "../../store/modules/auth/auth.actions";
+import {AppState} from '../../store';
+import {Store} from '@ngrx/store';
+import {AuthSignInRequest} from '../../store/modules/auth/auth.actions';
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss']
+  styleUrls: ['./sign-in.component.scss', './sign-in-mobile.components.scss']
 })
 export class SignInComponent implements OnInit {
   form: FormGroup;

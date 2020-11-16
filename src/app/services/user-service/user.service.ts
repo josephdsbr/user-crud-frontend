@@ -21,4 +21,8 @@ export class UserService implements UserDataService {
   saveUser(user: UserRegisterRequestModel): Observable<UserState> {
     return this.http.post<UserState>(`https://crud-user-example.herokuapp.com/users`, user);
   }
+
+  updateUser(user: UserState): Observable<UserState> {
+    return this.http.put<UserState>(`https://crud-user-example.herokuapp.com/users`, user);
+  }
 }

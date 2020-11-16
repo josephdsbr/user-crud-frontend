@@ -7,11 +7,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {NgxMaskModule, IConfig} from 'ngx-mask';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
-  declarations: [SignInComponent, SignUpComponent],
+  declarations: [SignInComponent, SignUpComponent, UserDetailsComponent],
   imports: [
     RouterModule.forChild(pageRoutes),
     CommonModule,

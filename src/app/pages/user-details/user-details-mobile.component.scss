@@ -1,0 +1,51 @@
+@media (max-width: 800px) {
+  .user-details {
+
+    &__content {
+      overflow: hidden;
+      max-height: 100%;
+      grid-template-rows: 15% 60% 20%;
+      grid-row-gap: 1.5%;
+    }
+
+    &__form {
+      grid-template-areas:
+        "name name name name"
+        "email email email email"
+        "phone phone phone phone"
+        "street street street street"
+        "zipCode zipCode zipCode number"
+        "complement complement complement complement"
+        "district district district district"
+        "city city city city"
+        "state state state state";
+      grid-auto-rows: minmax(3.5rem, 4.5rem);
+      grid-column-gap: 2%;
+      grid-row-gap: 5%;
+
+      &--enabled {
+        grid-template-areas:
+        "name name name"
+        "password password password"
+        "email email email"
+        "phone phone phone"
+        "street street street"
+        "zipCode zipCode number"
+        "complement complement complement"
+        "district district district"
+        "city city city"
+        "state state state";
+      }
+    }
+
+    &__title {
+      font-size: 1.4rem;
+    }
+
+    &__description,
+    &__value {
+      font-size: 0.9rem
+    }
+  }
+
+}

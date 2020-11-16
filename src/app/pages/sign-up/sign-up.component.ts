@@ -12,7 +12,7 @@ import {of} from 'rxjs';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss']
+  styleUrls: ['./sign-up.component.scss', './sign-up-mobile.components.scss']
 })
 export class SignUpComponent implements OnInit {
   form: FormGroup;

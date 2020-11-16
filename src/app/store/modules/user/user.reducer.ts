@@ -9,6 +9,8 @@ export const UserReducer = (state: UserState = userInitialState, action: UserAct
     switch (action.type) {
       case UserActionsType.USER_FETCH_DATA_BY_ID_SUCCESS:
         return action.payload;
+      case UserActionsType.USER_UPDATE_SUCCESS:
+        return action.payload;
     }
   });
 };

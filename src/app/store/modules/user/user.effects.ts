@@ -5,9 +5,9 @@ import {
   UserActionsType,
   UserFetchDataByIdFailure,
   UserFetchDataByIdRequest,
-  UserFetchDataByIdSuccess
+  UserFetchDataByIdSuccess, UserUpdateFailure, UserUpdateRequest, UserUpdateSuccess
 } from './user.actions';
-import {catchError, map, mergeMap, tap} from 'rxjs/operators';
+import {catchError, map, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {UserService} from '../../../services/user-service/user.service';
 import {of} from 'rxjs';
 import {ToastrService} from 'ngx-toastr';
@@ -37,6 +37,21 @@ export class UserEffects {
   @Effect({ dispatch: false })
   userFetchDetailsByIdFailure = this.actions$.pipe(
     ofType<UserFetchDataByIdFailure>(UserActionsType.USER_FETCH_DATA_BY_ID_FAILURE),
-    map(({ payload }) => this.toastr.warning(payload.error.error))
+    map(({ payload }) => this.toastr.warning(payload.error.error || 'Unexpected Error'))
+  );
+
+  @Effect()
+  userUpdateRequest = this.actions$.pipe(
+    ofType<UserUpdateRequest>(UserActionsType.USER_UPDATE_REQUEST),
+    switchMap(({ payload }) => this.userService.updateUser(payload).pipe(
+      map(user => new UserUpdateSuccess(user)),
+      catchError(err => of(new UserUpdateFailure(err)))
+    ))
+  );
+
+  @Effect()
+  userUpdateFailure = this.actions$.pipe(
+    ofType<UserUpdateFailure>(UserActionsType.USER_UPDATE_FAILURE),
+    map(({ payload }) => this.toastr.warning(payload.error.error || 'Unexpected Error'))
   );
 }

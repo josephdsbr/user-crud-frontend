@@ -1,0 +1,35 @@
+@media (max-width: 800px) {
+  .sign-up {
+
+    &__content {
+      overflow: hidden;
+      max-height: 100%;
+      grid-template-rows: 15% 60% 20%;
+      grid-row-gap: 1.5%;
+    }
+
+    &__form {
+      padding-bottom: 1rem;
+      grid-template-areas:
+        "name name name"
+        "email email email"
+        "password password password"
+        "phone phone phone"
+        "zipCode zipCode zipCode"
+        "street street street"
+        "number number number"
+        "complement complement complement"
+        "district district district"
+        "city city state";
+      grid-row-gap: 5%;
+      grid-auto-rows: minmax(3.5rem, 4.5rem);
+      grid-column-gap: 2%;
+    }
+
+    &__description,
+    &__value {
+      font-size: 0.9rem;
+    }
+  }
+
+}

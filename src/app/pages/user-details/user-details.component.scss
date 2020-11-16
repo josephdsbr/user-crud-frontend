@@ -1,4 +1,4 @@
-.sign-up {
+.user-details {
   height: 100%;
   width: 100%;
   display: grid;
@@ -8,7 +8,6 @@
     max-width: 35rem;
     background: #202024;
     height: 85%;
-    max-height: 100%;
     -webkit-box-shadow: 0 0 4px 1px #8257e6;
     -moz-box-shadow: 0 0 4px 1px #8257e6;
     box-shadow: 0 0 4px 1px #8257e6;
@@ -16,7 +15,7 @@
     border-radius: 0.5rem;
     justify-self: center;
     display: grid;
-    padding: 1% 2%;
+    padding: 1% 3%;
     grid-template-rows: min-content 62% 20%;
     grid-row-gap: 1.5%;
     grid-template-areas:
@@ -35,6 +34,7 @@
   }
 
   &__form {
+    max-height: 90%;
     width: 100%;
     overflow-y: scroll;
     grid-area: form;
@@ -43,24 +43,19 @@
     grid-column-gap: 3%;
     padding: 0 1rem;
     grid-template-areas:
-      "name email password"
-      "phone phone zipCode"
-      "street street street"
-      "number complement complement"
+      "name name email"
+      "phone street street"
+      "zipCode number complement"
       "district city state";
     grid-row-gap: 10%;
 
-    @media (max-width: 800px) {
+    &--enabled {
       grid-template-areas:
-      "name name name"
-      "email email email"
-      "password password password"
-      "phone phone zipCode"
+      "name name email"
+      "password password phone"
       "street street street"
-      "number complement complement"
-      "district city city"
-      "state state state";
-      grid-row-gap: 5%;
+      "zipCode number complement"
+      "district city state";
     }
 
     /* width */
@@ -112,7 +107,7 @@
       filter: brightness(80%);
     }
 
-    &--sign-up {
+    &--edit {
       background: #4caf50;
     }
 
@@ -131,6 +126,7 @@
     display: grid;
     grid-template-rows: min-content auto;
     grid-row-gap: 10%;
+    align-items: center;
     align-self: center;
     justify-self: center;
 
@@ -164,18 +160,34 @@
   &__value {
     width: 100%;
     height: 100%;
-    border-radius: 0.35rem;
-    border: none;
-    padding: 0 0.7rem;
-    box-shadow: 0px 0px 3px 1px #8257e6;
+    display: flex;
+    align-items: center;
     transition: 0.25s ease-in-out;
 
-    &:hover {
-      box-shadow: 0px 0px 3px 1px #e1e1e6;
+    &:enabled {
+      border-radius: 0.35rem;
+      border: none;
+      padding: 0 0.7rem;
+      box-shadow: 0px 0px 3px 1px #8257e6;
+
+      &:focus {
+        box-shadow: 0px 0px 3px 1px #4caf50;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 3px 1px #e1e1e6;
+      }
     }
 
-    &:focus {
-      box-shadow: 0px 0px 3px 1px #4caf50;
+    &:disabled {
+      color: #ffffff !important;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #8257e6;
+      transition: 0.25s ease-in-out;
+      &:hover {
+        border-color: #4caf50;
+      }
     }
   }
 

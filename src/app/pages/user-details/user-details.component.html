@@ -1,0 +1,69 @@
+<section class="user-details">
+  <form class="user-details__content" [formGroup]="form">
+    <h1 class="user-details__title"> {{ isDisabled ? 'Detalhes do Usuário' : 'Atualização de Dados' }}</h1>
+    <div
+      class="user-details__form"
+      [class.user-details__form--enabled]="!isDisabled"
+    >
+      <div class="user-details__field user-details__field--name">
+        <label class="user-details__description">Seu nome</label>
+        <input class="user-details__value" formControlName="name" />
+      </div>
+
+      <div class="user-details__field user-details__field--email">
+        <label class="user-details__description">E-mail</label>
+        <input class="user-details__value" formControlName="email" />
+      </div>
+
+      <div class="user-details__field user-details__field--password" *ngIf="!isDisabled">
+        <label class="user-details__description">Senha</label>
+        <input class="user-details__value" formControlName="password" type="password" />
+      </div>
+
+      <div class="user-details__field user-details__field--phone">
+        <label class="user-details__description">Celular</label>
+        <input class="user-details__value" mask="(00) 0 0000-0000" formControlName="phone" />
+      </div>
+
+      <div formGroupName="address" class="user-details__field user-details__field--zipCode">
+        <label class="user-details__description">CEP</label>
+        <input class="user-details__value" mask="00.000-000" formControlName="zipCode" />
+      </div>
+
+      <div formGroupName="address" class="user-details__field user-details__field--street">
+        <label class="user-details__description">Logradouro</label>
+        <input class="user-details__value" formControlName="street" />
+      </div>
+
+      <div formGroupName="address" class="user-details__field user-details__field--number">
+        <label class="user-details__description">Número</label>
+        <input class="user-details__value" formControlName="number" />
+      </div>
+
+      <div formGroupName="address" class="user-details__field user-details__field--complement">
+        <label class="user-details__description">Complemento</label>
+        <input class="user-details__value" formControlName="complement" />
+      </div>
+
+      <div formGroupName="address" class="user-details__field user-details__field--district">
+        <label class="user-details__description">Bairro</label>
+        <input class="user-details__value" formControlName="district" />
+      </div>
+
+      <div formGroupName="address" class="user-details__field user-details__field--city">
+        <label class="user-details__description">Cidade</label>
+        <input class="user-details__value" formControlName="city" />
+      </div>
+
+      <div formGroupName="address" class="user-details__field user-details__field--state">
+        <label class="user-details__description">Estado</label>
+        <input class="user-details__value" formControlName="state"/>
+      </div>
+
+    </div>
+    <footer class="user-details__actions">
+      <button class="user-details__btn user-details__btn--edit" [disabled]="!isValid" (click)="handleSubmit()">{{ isDisabled ? 'Editar' : 'Salvar' }}</button>
+      <button class="user-details__btn user-details__btn--register" (click)="handleGoBack()">Voltar</button>
+    </footer>
+  </form>
+</section>
