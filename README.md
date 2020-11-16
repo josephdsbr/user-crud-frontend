@@ -32,7 +32,9 @@ Você pode visualizar esta aplicação através deste [link](https://obscure-ham
 - [x] Implementação de Validadores.
 - [ ] Implementação de Testes Unitários para os Reducers e Effects.
 
-### [Métricas](#metricas)
+
+###[Métricas](#metricas)
+
 
 As métricas abaixo foram feitas utilizando a ferramenta [LightHouse da Google](https://developers.google.com/web/tools/lighthouse?hl=pt_br).
 
