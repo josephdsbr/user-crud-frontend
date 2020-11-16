@@ -101,8 +101,8 @@ As seguintes ferramentas foram usadas na construção deste projeto:
 ### Autor
 ---
 
-<a style="border-radius: 50%;" href="https://github.com/josephdsbr">
- <img  src="https://avatars1.githubusercontent.com/u/42288345?s=460&u=3173ac53eabc99366999615e7a2623bcb6b1560f&v=4" width="100px;" alt=""/>
+<a href="https://github.com/josephdsbr">
+ <img  src="https://avatars1.githubusercontent.com/u/42288345?s=460&u=3173ac53eabc99366999615e7a2623bcb6b1560f&v=4" width="100px;" alt="" style="border-radius: 50%;"/>
  <br />
  <sub><b>José Vinícius Santos de Melo</b></sub></a> <a href="https://github.com/josephdsbr" title="Josephdsbr">🚀</a>
 
