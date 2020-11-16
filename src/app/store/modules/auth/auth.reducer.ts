@@ -21,6 +21,8 @@ export const AuthReducer = (state: AuthState = authInitialState, action: AuthAct
       case AuthActionsType.AUTH_SIGN_IN_FAILURE:
         draft.loading = false;
         break;
+      case AuthActionsType.AUTH_SIGN_OUT:
+        return authInitialState;
     }
   });
 };

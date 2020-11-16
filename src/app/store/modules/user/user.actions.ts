@@ -8,7 +8,8 @@ export enum UserActionsType {
   USER_FETCH_DATA_BY_ID_FAILURE = '[USER] FETCH DATA BY ID FAILURE',
   USER_UPDATE_REQUEST = '[USER] UPDATE REQUEST',
   USER_UPDATE_SUCCESS = '[USER] UPDATE SUCCESS',
-  USER_UPDATE_FAILURE = '[USER] UPDATE FAILURE'
+  USER_UPDATE_FAILURE = '[USER] UPDATE FAILURE',
+  USER_RESET_STATE = '[USER] RESET STATE'
 }
 
 export class UserFetchDataByIdRequest implements Action {
@@ -47,5 +48,9 @@ export class UserUpdateFailure implements Action {
   }
 }
 
+export class UserResetState implements Action {
+  readonly type = UserActionsType.USER_RESET_STATE;
+}
+
 export type UserActions = UserFetchDataByIdRequest | UserFetchDataByIdSuccess | UserFetchDataByIdFailure |
-  UserUpdateRequest | UserUpdateSuccess | UserUpdateFailure;
+  UserUpdateRequest | UserUpdateSuccess | UserUpdateFailure | UserResetState;

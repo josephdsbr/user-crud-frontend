@@ -16,7 +16,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {UserReducer} from './store/modules/user/user.reducer';
 import {UserEffects} from './store/modules/user/user.effects';
 import {InterceptorsModule} from './interceptors/interceptors.module';
-import {NgxSpinnerModule} from "ngx-spinner";
+import {NgxSpinnerModule} from 'ngx-spinner';
+import { storageSyncMetaReducer } from 'ngrx-store-persist';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import {NgxSpinnerModule} from "ngx-spinner";
     StoreModule.forRoot({
       auth: AuthReducer,
       user: UserReducer
-    }),
+    }, { metaReducers: [storageSyncMetaReducer] }),
     StoreDevtoolsModule.instrument({maxAge: 50}),
     EffectsModule.forRoot([AuthEffects, UserEffects]),
     AppRoutingModule,

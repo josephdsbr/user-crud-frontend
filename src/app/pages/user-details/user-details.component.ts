@@ -6,6 +6,7 @@ import {selectUser} from '../../store/modules/user/user.selectors';
 import {UserState} from '../../models/user.model';
 import {UserUpdateRequest} from '../../store/modules/user/user.actions';
 import {Router} from '@angular/router';
+import {AuthSignOut} from "../../store/modules/auth/auth.actions";
 
 @Component({
   selector: 'app-user-details',
@@ -62,7 +63,7 @@ export class UserDetailsComponent implements OnInit {
 
   handleGoBack(): void {
     if (this.isDisabled) {
-      this.router.navigate(['./..']);
+      this.store.dispatch(new AuthSignOut());
       return;
     }
 

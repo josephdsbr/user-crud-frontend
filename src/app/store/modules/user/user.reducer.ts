@@ -11,6 +11,8 @@ export const UserReducer = (state: UserState = userInitialState, action: UserAct
         return action.payload;
       case UserActionsType.USER_UPDATE_SUCCESS:
         return action.payload;
+      case UserActionsType.USER_RESET_STATE:
+        return userInitialState;
     }
   });
 };

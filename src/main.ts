@@ -1,5 +1,6 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { getAllDataFromLocalForage, default as localForage } from 'ngrx-store-persist';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
@@ -8,7 +9,12 @@ if (environment.production) {
   enableProdMode();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
-});
+getAllDataFromLocalForage({
+  driver: localForage.INDEXEDDB,
+  keys: ['auth', 'user']
+}).then(() =>
+    platformBrowserDynamic().bootstrapModule(AppModule)
+      .catch(err => console.error(err))
+);
+
+

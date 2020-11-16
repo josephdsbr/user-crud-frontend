@@ -6,7 +6,7 @@ import {AuthService} from '../../../services/auth-service/auth.service';
 import {of} from 'rxjs';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
-import {UserFetchDataByIdRequest} from '../user/user.actions';
+import {UserFetchDataByIdRequest, UserResetState} from '../user/user.actions';
 
 @Injectable()
 export class AuthEffects {
@@ -34,5 +34,12 @@ export class AuthEffects {
   authSignInFailure = this.actions$.pipe(
     ofType<AuthSignInFailure>(AuthActionsType.AUTH_SIGN_IN_FAILURE),
     tap(({ payload }) => this.toastr.warning(payload.error.error))
+  );
+
+  @Effect()
+  authSignOut = this.actions$.pipe(
+    ofType(AuthActionsType.AUTH_SIGN_OUT),
+    map(() => new UserResetState()),
+    tap(() => this.router.navigate(['/']))
   );
 }
