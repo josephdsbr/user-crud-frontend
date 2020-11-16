@@ -15,6 +15,6 @@ export class AuthService implements AuthDataService{
   }
 
   getUserByEmailAndPassword(data: AuthSignInRequestModel): Observable<AuthSignInResponseModel> {
-    return this.http.post<AuthSignInResponseModel>(`https://crud-user-example.herokuapp.com/sign-in`, data );
+    return this.http.post<AuthSignInResponseModel>(`${this.url}/sign-in`, data );
   }
 }

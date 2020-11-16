@@ -8,6 +8,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import {NgxMaskModule, IConfig} from 'ngx-mask';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import {AuthGuard} from '../guards/auth.guard';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -20,6 +21,9 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     FormsModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(options),
+  ],
+  providers: [
+    AuthGuard
   ]
 })
 export class PagesModule { }

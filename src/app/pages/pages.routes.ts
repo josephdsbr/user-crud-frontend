@@ -2,6 +2,7 @@ import {Routes} from '@angular/router';
 import {SignInComponent} from './sign-in/sign-in.component';
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {UserDetailsComponent} from "./user-details/user-details.component";
+import {AuthGuard} from "../guards/auth.guard";
 
 const pageRoutes: Routes = [
   {
@@ -19,7 +20,8 @@ const pageRoutes: Routes = [
   },
   {
     path: 'details',
-    component: UserDetailsComponent
+    component: UserDetailsComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

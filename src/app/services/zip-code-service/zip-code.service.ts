@@ -11,14 +11,14 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ZipCodeService implements ZipCodeDataService {
-  private url = environment.serverUrl;
+  private url = environment.zipCodeApiUrl;
 
   constructor(private http: HttpClient) {
   }
 
   findAddressByZipCode(zipCode: string): Observable<AddressModel> {
     return this.http
-      .get<ZipCodeResponseModel>(`https://viacep.com.br/ws/${zipCode}/json/`)
+      .get<ZipCodeResponseModel>(`${this.url}/${zipCode}/json/`)
       .pipe(map(address => ({
           complement: address.complemento,
           city: address.localidade,

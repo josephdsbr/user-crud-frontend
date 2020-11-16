@@ -15,14 +15,14 @@ export class UserService implements UserDataService {
   }
 
   getUserDetailsById(id: number): Observable<UserState> {
-    return this.http.get<UserState>(`https://crud-user-example.herokuapp.com/users/${id}`);
+    return this.http.get<UserState>(`${this.url}/users/${id}`);
   }
 
   saveUser(user: UserRegisterRequestModel): Observable<UserState> {
-    return this.http.post<UserState>(`https://crud-user-example.herokuapp.com/users`, user);
+    return this.http.post<UserState>(`${this.url}/users`, user);
   }
 
   updateUser(user: UserState): Observable<UserState> {
-    return this.http.put<UserState>(`https://crud-user-example.herokuapp.com/users`, user);
+    return this.http.put<UserState>(`${this.url}/users`, user);
   }
 }
